@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Decision Engine</title>
 </head>
 <body>
     <h1>AI Decision Engine</h1>
-
-    <textarea id="texto" rows="6" cols="50" placeholder="Type something here..."></textarea>
+    <p>Type a message below and see how the backend responds.</p>
+    <label for="texto">User input</label>
     <br />
+    <textarea 
+        id="texto" 
+        rows="6" 
+        cols="50" 
+        placeholder="Example: My internet has been down for two days and support is not helping.">
+    </textarea>
     <button id="analyzeBtn">Analyze</button>
 
+    <p id="status"></p>
+
     <h2>Response</h2>
-    <pre id="result"></pre>
+    <pre id="result">No response yet.</pre>
 
     <script src="./script.js"></script>
 </body>
