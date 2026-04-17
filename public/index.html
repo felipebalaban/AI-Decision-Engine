@@ -8,6 +8,7 @@
 <body>
     <h1>AI Decision Engine</h1>
     <p>Type a message below and see how the backend responds.</p>
+
     <label for="texto">User input</label>
     <br />
     <textarea 
@@ -16,11 +17,21 @@
         cols="50" 
         placeholder="Example: My internet has been down for two days and support is not helping.">
     </textarea>
+    <br /><br />
+
     <button id="analyzeBtn">Analyze</button>
 
     <p id="status"></p>
 
-    <h2>Response</h2>
+    <h2>Decision Summary</h2>
+    <p><strong>Categoria:</strong> <span id="categoria">-</span></p>
+    <p><strong>Prioridade:</strong> <span id="prioridade">-</span></p>
+    <p><strong>Canal recomendado:</strong> <span id="canal">-</span></p>
+    <p><strong>Tom:</strong> <span id="tom">-</span></p>
+    <p><strong>Confianca:</strong> <span id="confianca">-</span></p>
+    <p><strong>Justificativa:</strong> <span id="justificativa">-</span></p>
+
+    <h2>Raw Response</h2>
     <pre id="result">No response yet.</pre>
 
     <script src="./script.js"></script>

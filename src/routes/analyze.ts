@@ -1,7 +1,9 @@
 import { Router } from "express";
+import { analyzeText } from "../services/aiService";
+
 const router = Router();
 
-router.post("/", (req,res)=> {
+router.post("/", async (req,res)=> {
     const { texto } = req.body;
 
     if(!texto) {
@@ -10,10 +12,17 @@ router.post("/", (req,res)=> {
         })
     }
 
-    return res.json({
-        message: "Texto recebido com sucesso.",
-        textoRecebido: texto
-    })
+    try {
+        const decision = await analyzeText(texto);
+        return res.json(decision)
+    }
+    catch(error) {
+        console.error(error);
+        return res.status(500).json({
+            error: "Erro ao analisar o texto."
+        })
+    }
+
 })
 
 export default router
