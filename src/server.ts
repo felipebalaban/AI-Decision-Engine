@@ -1,7 +1,8 @@
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import analyzeRoute from "./routes/analyze";
-import "dotenv/config";
+
 
 const app = express();
 const PORT = 3000;

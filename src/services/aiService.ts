@@ -35,6 +35,9 @@ export async function analyzeText(texto: string): Promise<Decision> {
         throw new Error("Gemini returned an empty response.")
     }
 
+    console.log("RAW GEMINI RESPONSE:");
+    console.log(rawText);
+
     const parsed = JSON.parse(rawText)
 
     return decisionSchema.parse(parsed);
